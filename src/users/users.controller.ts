@@ -4,6 +4,7 @@ import {
 } from '@nestjs/common';
 import { UsersService } from './users.service';
 import { JwtAuthGuard } from '../common/jwt-auth.guard';
+import { UpdateUserDto } from './dto/update-user.dto';
 
 @Controller('users')
 export class UsersController {
@@ -16,12 +17,12 @@ export class UsersController {
   }
 
   @Post()
-  create(@Body() dto) {
+  create(@Body() dto: UpdateUserDto) {
     return this.service.create(dto);
   }
 
   @Patch(':id')
-  update(@Param('id') id: number, @Body() dto) {
+  update(@Param('id') id: number, @Body() dto: UpdateUserDto) {
     return this.service.update(id, dto);
   }
 

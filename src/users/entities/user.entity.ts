@@ -6,26 +6,26 @@ import {
 @Entity('users')
 export class User {
     @PrimaryGeneratedColumn()
-    id: number;
+    id!: number;
 
     @Column()
-    first_name: string;
+    first_name!: string;
 
     @Column()
-    last_name: string;
+    last_name!: string;
 
     @Column({ unique: true })
-    email: string;
+    email!: string;
 
     @Column()
-    password: string;
+    password!: string;
 
     @CreateDateColumn()
-    created_at: Date;
+    created_at!: Date;
 
     @UpdateDateColumn()
-    modified_at: Date;
+    modified_at!: Date;
 
     @DeleteDateColumn()
-    deleted_at: Date;
+    deleted_at!: Date;
 }
